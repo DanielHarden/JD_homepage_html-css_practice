@@ -1,0 +1,303 @@
+ .grid {
+ 	height: 480px;
+ }
+
+ .grid-col1 {
+ 	width: 190px;
+ 	height: 100%;
+ 	background-color: #6e6568;
+ 	color: #fff;/*设置链接的颜色*/
+ 	font-size: 14px; /*不是给链接文字设置大小,给反斜杠设置大小*/
+ 	position: relative; /*和广告部分配合*/
+ }
+
+
+/*广告部分的宽高是通过测量图片得来的*/
+.ad {
+	width: 250px;
+	height: 480px;
+	/*background-color: pink;*/
+	position: absolute;
+	top: 0;
+	left: -250px;/*往左走到本身盒子宽度*/
+}
+
+.ad-r {
+	position: absolute; /*注意这里需要再设置图片的定位，上面的ad是设置图片容器div的定位*/
+	top: 0;
+	left: 250px;
+	z-index: 999; /*防止后面定位的图片压过它，默认的为0; 默认后面的会压过前面的*/
+	width: 0px;/* 一开始盒子的宽度为0来隐藏*/
+	/*这个图片的动画，所以这里添加过渡*/
+	height: 480px; /*这里设置高度是为了动画时图片高度不变来达成滑出的动画效果*/
+	transition: all 0.8s;
+}
+
+.ad:hover .ad-r{ /*鼠标经过这个大盒子时，里面的图片盒子宽度变为图片宽度*/
+	width: 990px;
+}
+
+ .grid-col1 a {
+ 	font-size: 14px;/*这个才是给链接文字设置大小*/
+ 	/*如何查看网页截图文字大小, 在ps里面输入一个字调到一样大小看看*/
+ 	color: #fff;
+ 	margin:0 3px;
+ }
+
+.grid-col1 a:hover {
+	color: #f10215;
+}
+
+ .grid-col1 ul {
+ 	padding: 10px 0;
+ }
+
+ .grid-col1 li {
+ 	/*这里给的是li而不是ul 主要是为了鼠标hover的变色*/
+ 	padding-left: 12px;
+ 	height: 29px;
+ 	line-height: 26px;
+ }
+
+ .grid-col1 li:hover {
+ 	background-color: #9c9698;
+ }
+ .grid-col2 {
+ 	width: 790px;
+ 	height: 100%;
+ 	/*background-color: purple;*/
+ 	margin-left: 10px;
+ }
+
+  /*banner部分*/
+
+.grid-col2-b div {
+	float: left;
+	margin-top: 10px;
+
+}
+
+.grid-col2-b div:last-child {
+	float: right;
+}
+
+
+/*箭头部分*/
+.arrow-l, .arrow-r {
+	position: absolute;
+	top: 50%;
+	width: 30px;
+	height: 60px;
+	background: rgba(0,0,0,.3);
+	transform: translateY(-50%);
+	
+	/*设置里面箭头的样式*/
+	text-align: center;
+	line-height: 60px;
+	font-size: 30px;
+	color: rgb(255,255,255,.8);
+	font-family: arial;
+	font-weight: normal;
+}
+
+.arrow-r {
+	right: 0;
+}
+
+.grid-col2-t {
+	position: relative;
+}
+
+.circle {
+    width: 167px;
+    height: 20px;
+    background: rgba(255, 255, 255, .3);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /*配合left:50%实现居中对齐;*/
+    bottom: 20px;
+    border-radius: 10px;
+    /*padding-left: 8px;注意和width相加等于测量的宽度*/
+}
+
+.circle li {
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	border-radius: 50%;
+	float: left;
+	margin: 4px;
+	cursor: pointer; /*鼠标经过li变成小手*/
+}
+
+.circle .current {  /*注意权重*/
+	background-color: #f10215;
+}
+
+
+.grid-col3 {
+ 	width: 190px;
+ 	height: 100%;
+ 	/*background-color: skyblue;*/
+ }
+
+
+
+/*右边模块*/
+
+/*登录模块*/
+.login {
+	height: 85px;
+	/*background-color: pink;*/
+	border-bottom: 1px solid #ccc;  
+	padding: 15px;
+	/*box-sizing: border-box;*/
+}
+.login-t {
+	width: 95px;
+	height: 60px;
+	line-height: 20px;
+	font-size: 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #666; 
+	padding-left: 60px; /*把文字挤过来*/
+	position: relative;
+}
+
+.login-t a {
+	color: #666;
+}
+
+.login-t a: {
+	color: #f10215;
+}
+
+.user-info {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(../images/sprite_userinfo@1x.png) no-repeat -70px 0;
+}
+
+.user-info img {
+	width: 45px; /*将图片缩小放到框里*/
+	border-radius: 50%;  /*记住这个是给图片radius 而不是给user-info  radius*/
+    margin-left: 3px;
+    margin-top: 2px;
+}
+
+.login-b a {
+	display: inline-block;
+	width: 70px;
+	height: 20px;
+	border: 2px solid #f10215;
+	margin-right: 3px;
+	text-align: center; /*水平居中*/
+	line-height: 20px; /*垂直居中*/
+	color: #f10215;
+}
+
+.login-b a:hover {
+	color: #fff;
+	background-color: #f10215;
+}
+
+
+/*新闻模块*/
+.news {
+	height: 154px;
+	border-bottom: 1px solid #ccc;  
+	background-color: #fff;
+	padding:  7px 13px 0;
+	box-sizing: border-box;
+}
+
+
+.new-t {
+	height: 19px;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+
+.new-t a {
+    float: left;
+    height: 17px;
+	line-height: 17px;
+}
+.cuxiao {
+	width: 38px;
+	border-right: 1px solid #ccc;
+}
+
+.gg {
+	margin-left: 15px;
+}
+
+.new-t .more {
+	float: right;
+} /*记得要增加权重*/
+
+.new-t div {
+	height: 2px;
+	width: 28px;
+	background-color: #f10215;
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+}/*处理小红线*/
+
+
+.new-b {
+	padding-top: 15px;
+}
+
+.new-b li {
+	height: 23px;
+	line-height: 23px;
+}
+
+/*扩展功能模块*/
+.expand {
+	height: 209px;
+	background-color: #fff;
+	overflow: hidden; /*这个是继承父亲的宽度为190px，所以溢出的部分切掉*/
+}
+
+.expand ul {
+	width: 195px;
+	/*父亲为是190像素， 但是里面的li 宽度摆放不开4个li*/
+}
+
+.expand li {
+	width: 47px;
+	height: 69px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	float: left;
+}
+
+.expand  li a {
+	display: block;
+	padding-top: 15px;
+	text-align: center;
+}
+
+.expand  li i {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background: url(../images/sprite_fs@1x.png) no-repeat;
+	width: 18px;
+	height: 23px;
+	background-position: -5px -88px;
+}
+
+.expand  li:first-child i {
+	width: 18px;
+	height: 23px;
+	background-position: -5px -88px;
+}
